@@ -1,0 +1,8 @@
+log/*
+tmp/*
+coverage/*
+.DS_Store
+.bundle
+*sqlite3
+.yardoc
+doc

@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+
+module Generators
+  VERSION = '0.1.0'
+
+  class Cli < Thor
+
+    include Thor::Actions
+
+    check_unknown_options!
+
+    def self.exit_on_failure?
+      true
+    end
+
+    class_option 'verbose',  :type => :boolean, :default => false
+
+    desc 'version', 'Display gen version'
+    map %w[-v --version] => :version
+
+    def version
+      say "gen version: #{VERSION}"
+    end
+
+    class_option :name, :default => ""
+    desc 'new type', 'Create a new file of type'
+    def new(type)
+
+      path = File.expand_path('./')
+      #raise Error, set_color("ERROR: #{path} already exists.", :red) if File.exist?(path)
+
+      say "Creating a new #{type} at #{path}"
+      create_file "#{path}/#{type}/#{options[:name]}.rb" do
+        "class #{options[:name]}\nend"
+      end
+
+    end
+
+  end
+
+end
+
+Generators::Cli.start

@@ -1,0 +1,1 @@
+web: source ./config/settings.sh && bundle exec iodine -p $PORT -t $WORKERS -w $THREADS
