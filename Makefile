@@ -8,3 +8,12 @@ bundle:
 
 run:
 	@./bin/run
+
+test:
+	@./bin/test
+
+migrate:
+	@./bin/migrate
+
+console:
+	@./bin/console

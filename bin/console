@@ -2,4 +2,4 @@
 
 source ./config/settings.sh
 
-rake console
+bundle exec rake console

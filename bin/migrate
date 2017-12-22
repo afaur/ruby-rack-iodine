@@ -2,4 +2,4 @@
 
 source ./config/settings.sh
 
-rake db:migrate
+bundle exec rake db:migrate

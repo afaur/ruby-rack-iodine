@@ -2,4 +2,4 @@
 
 source ./config/settings.sh
 
-rspec spec
+bundle exec rspec spec
