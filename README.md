@@ -1,3 +1,10 @@
+# Getting started
+Make sure you have ruby 2.4.1 as your default then...
+```
+$ make bundle
+$ make run
+```
+
 # Rack App Starter
 Has iodine, active record migrations, rspec, console.
 

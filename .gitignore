@@ -1,8 +1,9 @@
-log/*
 tmp/*
+log/*
 coverage/*
 .DS_Store
 .bundle
 *sqlite3
 .yardoc
 doc
+.vendor

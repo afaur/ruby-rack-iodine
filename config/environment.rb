@@ -11,14 +11,11 @@ require 'ostruct'
 require 'logger'
 
 module App
-
   Config = OpenStruct.new
 
   class << self
     def root
-      @root ||= Pathname.new(
-        File.dirname(__FILE__)
-      ).join('..').expand_path
+      @root ||= Pathname.new( File.dirname(__FILE__) ).join('..').expand_path
     end
 
     def env
@@ -32,16 +29,12 @@ module App
     LOG_TO_FILE ? root.join('log', "#{env}.log") : STDOUT
   )
 
-  Dir[
-    root.join('config/initializers/**/*.rb')
-  ].each { |initializer|
-    require initializer
-  }
+  initGlob = root.join('config/initializers/**/*.rb')
+  Dir[ initGlob ].each { |initializer| require initializer }
 
   $LOAD_PATH.unshift root.join('lib')
 
   require to_s.gsub(/(\w)([A-Z])/, '\\1_\\2').downcase
 
   require root.join('config/routes') if defined?(::Rack)
-
 end

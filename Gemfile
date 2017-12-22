@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.4.1'
 
 gem 'rack'
 gem 'foreman', require: false
@@ -8,7 +8,7 @@ gem 'foreman', require: false
 gem 'rake',    require: false
 gem 'iodine', :git => 'https://github.com/boazsegev/iodine.git'
 
-gem 'activerecord', '~> 4.0.0', require: 'active_record'
+gem 'activerecord', '5.1.4', require: 'active_record'
 gem 'sqlite3'
 
 group :development, :test do
